@@ -6,7 +6,7 @@ This guide walks you through setting up a Conda environment for running Tello dr
 
 ## 🧰 1. Install Conda Env
 
-### Conda
+### Conda window
 ```
 Invoke-WebRequest https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Windows-x86_64.exe -OutFile "$env:USERPROFILE\Downloads\Anaconda3-2025.06-0-Windows-x86_64.exe"
 ```
@@ -31,6 +31,13 @@ you should see something like this:
 ```
 conda 25.5.1
 ```
+
+### Linux
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh
+bash Anaconda3-2025.06-1-Linux-x86_64.sh
+```
+
 ### Tello Env
 
 Accept Conda ToS
