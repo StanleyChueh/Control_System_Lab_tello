@@ -6,6 +6,21 @@ This guide walks you through setting up a Conda environment for running Tello dr
 
 ## 🧰 1. Install Conda Env
 
+### MiniConda Window
+Download Miniconda installer
+```
+cd ~
+curl -o miniconda.exe https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+```
+Run the installer
+```
+start /wait "" miniconda.exe /InstallationType=JustMe /RegisterPython=0 /AddToPath=1 /S /D=%USERPROFILE%\Miniconda3
+```
+Initialize conda 
+```
+conda init
+```
+
 ### Conda window
 ```
 Invoke-WebRequest https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Windows-x86_64.exe -OutFile "$env:USERPROFILE\Downloads\Anaconda3-2025.06-0-Windows-x86_64.exe"
