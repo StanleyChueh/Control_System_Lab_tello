@@ -2,12 +2,12 @@ import pygame
 from djitellopy import Tello
 import time
 
-# 初始化 pygame
+# Initialize pygame
 pygame.init()
 screen = pygame.display.set_mode((300, 300))
 pygame.display.set_caption("Tello Keyboard Control")
 
-# 建立 tello
+# Create Tello object
 tello = Tello()
 tello.connect()
 print("Battery:", tello.get_battery())
@@ -20,34 +20,41 @@ running = True
 while running:
     lr = fb = ud = yv = 0
     
+    # When window is closed(x), stop the loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
     keys = pygame.key.get_pressed()
 
-    # 左右
+    # Left and Right
+    # pygame.K_LEFT => left arrow key
     if keys[pygame.K_LEFT]:  lr = -speed
     if keys[pygame.K_RIGHT]: lr =  speed
 
-    # 前後
+    # Forward and Backward
+    # pygame.K_UP => up arrow key
     if keys[pygame.K_UP]:    fb =  speed
     if keys[pygame.K_DOWN]:  fb = -speed
 
-    # 上下
+    # Up and Down
+    # pygame.K_w => W key
     if keys[pygame.K_w]: ud =  speed
     if keys[pygame.K_s]: ud = -speed
 
-    # 旋轉
+    # Rotation
+    # pygame.K_a => A key
     if keys[pygame.K_a]: yv = -speed
     if keys[pygame.K_d]: yv =  speed
 
-    # 起飛
+    # Takeoff
+    # pygame.K_e => E key
     if keys[pygame.K_e]:
         print("Takeoff")
         tello.takeoff()
 
-    # 降落
+    # Land
+    # pygame.K_q => Q key
     if keys[pygame.K_q]:
         print("Land")
         tello.land()
